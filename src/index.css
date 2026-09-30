@@ -1,0 +1,99 @@
+:root {
+  --font-heading: "Dela Gothic One", sans-serif;
+  --font-body: "Lato", sans-serif;
+  --font-pixel: "Pixelify Sans", sans-serif;
+
+  --color-primary: #FF4040;
+  --color-secondary: #F59E0B;
+  --color-third: #8B5CF6;
+  --color-accent: #F59E0B;
+
+  /* Hintergrund */
+  --color-background: #FFFFFF;
+  --color-background-black: #000000;
+  --color-surface: #F8F9FA;
+  --color-nav: #FBCEB1;
+
+  /* Text */
+  --color-text: #000000;
+  --color-text-light: #6B7280;
+  --color-text-white: #FFFFFF;
+
+  /* Statusfarben */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(0.5rem, 1.5vw, 3rem);
+}
+
+h1, h2, h3, h4, h6 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 2rem + 6vw, 4.5rem);
+  font-weight: 400;
+  padding: 0;
+  line-height: 1;
+}
+
+h5 {
+    font-size: 0.6em;
+  font-weight: 400;
+  margin: 20px 0 0 0;
+}
+
+p {
+  padding: 20px;
+}
+
+button {
+  color: var(--color-text);
+  background-color: transparent;
+  font-family: var(--font-body);
+  font-size: clamp(0.5rem, 1.5vw, 3rem);
+  border: none;
+  z-index: 9999;
+  border-radius: 8%;
+  margin: 0 20px;
+}
+
+button:hover {
+  background-color: var(--color-background);
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-black {
+  font-weight: 900;
+}
+
+section {
+  background-color: white;
+  border-radius: 20px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}

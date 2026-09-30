@@ -1,0 +1,10 @@
+.aboutContainer {
+    background-color: #c8ccd9;
+    width: 100%;
+    display: flex;  
+    flex-direction: column;
+}
+
+.aboutContent {
+    margin: 20vw 15vw 20px 15vw;
+}
