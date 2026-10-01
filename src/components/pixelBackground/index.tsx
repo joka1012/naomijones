@@ -44,7 +44,7 @@ export default function index({ menuIsActive, navOption }: Props) {
     const blockSize = innerWidth * 0.05;
     const amountOfBlocks = Math.ceil(innerHeight / blockSize);
     const delays = shuffle([...Array(amountOfBlocks)].map((_, i) => i));
-    return delays.map((randomDelay, i) => {
+    return delays.map((randomDelay) => {
       return (
         <motion.div
           className={styles.block}
