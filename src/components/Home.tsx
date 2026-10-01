@@ -33,14 +33,17 @@ function Home() {
 
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
 
-    new RGBELoader().load("/studio_small_09_4k.hdr", (hdrTexture) => {
-      const envMap = pmremGenerator.fromEquirectangular(hdrTexture).texture;
+    new RGBELoader().load(
+      `${import.meta.env.BASE_URL}studio_small_09_4k.hdr`,
+      (hdrTexture) => {
+        const envMap = pmremGenerator.fromEquirectangular(hdrTexture).texture;
 
-      scene.environment = envMap;
+        scene.environment = envMap;
 
-      hdrTexture.dispose();
-      pmremGenerator.dispose();
-    });
+        hdrTexture.dispose();
+        pmremGenerator.dispose();
+      },
+    );
 
     camera.position.z = 30;
 
@@ -129,7 +132,7 @@ function Home() {
       const loader = new FontLoader();
 
       const font = await loader.loadAsync(
-        "/fonts/Dela Gothic One_Regular.json",
+        `${import.meta.env.BASE_URL}fonts/Dela Gothic One_Regular.json`,
       );
 
       material = new THREE.MeshStandardMaterial({
