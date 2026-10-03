@@ -1,4 +1,10 @@
-import { Routes, Route, useLocation, Link } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Work from "./components/Work";
@@ -13,6 +19,7 @@ function App() {
   const [navOption, setNavOption] = useState<NavOptions>("home");
 
   const location = useLocation();
+  const navigate = useNavigate();
   let image;
   switch (location.pathname) {
     case "/work":
@@ -53,7 +60,7 @@ function App() {
     }
 
     setTimeout(() => {
-      window.location.href = "/" + subdomain;
+      navigate("/" + subdomain);
     }, 1300);
   }
   return (
