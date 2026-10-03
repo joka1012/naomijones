@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Link } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Work from "./components/Work";
@@ -61,12 +61,13 @@ function App() {
       <PixelBackground menuIsActive={menuIsActive} navOption={navOption} />
       <div className={styles.container}>
         <nav className={styles.navcontainer}>
-          <a href="/" className={styles.navbtn}>
+          <Link to="/" className={styles.navbtn}>
             Naomi Jones
-          </a>
+          </Link>
+
           <div>
-            <a
-              href="/work"
+            <Link
+              to="/work"
               onClick={(e) => {
                 if (location.pathname !== "/work") {
                   navEvent(e, "work");
@@ -75,9 +76,10 @@ function App() {
               className={styles.navbtn}
             >
               Work
-            </a>
-            <a
-              href="/about"
+            </Link>
+
+            <Link
+              to="/about"
               onClick={(e) => {
                 if (location.pathname !== "/about") {
                   navEvent(e, "about");
@@ -86,9 +88,10 @@ function App() {
               className={styles.navbtn}
             >
               About
-            </a>
-            <a
-              href="/contact"
+            </Link>
+
+            <Link
+              to="/contact"
               onClick={(e) => {
                 if (location.pathname !== "/contact") {
                   navEvent(e, "contact");
@@ -97,7 +100,7 @@ function App() {
               className={styles.navbtn}
             >
               Contact
-            </a>
+            </Link>
           </div>
         </nav>
       </div>
