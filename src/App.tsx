@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import Work from "./components/Work";
 import Home from "./components/Home";
 import styles from "./App.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PixelBackground from "./components/pixelBackground";
 import type { NavOptions } from "./components/NavOptions";
 
@@ -23,15 +23,19 @@ function App() {
   let image;
   switch (location.pathname) {
     case "/work":
-      image = "layered-steps-haikei-work.svg";
+      image = "naomijones/layered-steps-haikei-work.svg";
       break;
     case "/about":
-      image = "layered-steps-haikei-about.svg";
+      image = "naomijones/layered-steps-haikei-about.svg";
       break;
     case "/contact":
-      image = "layered-steps-haikei-contact.svg";
+      image = "naomijones/layered-steps-haikei-contact.svg";
       break;
   }
+
+  useEffect(() => {
+    setMenuIsActive(false);
+  }, [location.pathname]);
 
   console.log(location.pathname, image);
 
@@ -71,7 +75,6 @@ function App() {
           <Link to="/" className={styles.navbtn}>
             Naomi Jones
           </Link>
-
           <div>
             <Link
               to="/work"
@@ -84,7 +87,6 @@ function App() {
             >
               Work
             </Link>
-
             <Link
               to="/about"
               onClick={(e) => {
@@ -96,7 +98,6 @@ function App() {
             >
               About
             </Link>
-
             <Link
               to="/contact"
               onClick={(e) => {
